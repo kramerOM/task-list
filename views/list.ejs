@@ -1,0 +1,29 @@
+<%- include('header') %>
+<body>
+  <div class="box" id="heading">
+    <h1><%= currentlero %></h1> <!-- Update the variable name here -->
+  </div>
+
+  <div class="box">
+    <form action="/" method="post">
+      <input type="text" name="newtask" placeholder="New Task" required>
+      <!-- Update the variable name to currentlero (instead of currentDay) -->
+      <button type="submit" name="list" value="<%= currentlero %>">+</button>
+      <input type="hidden" name="listName" value="<%= currentlero %>"></input>
+
+    </form>
+  </div>
+
+  <div class="box">
+    <form action="/delete" method="post">
+      <% newitems.forEach(function(task) { %>
+        <div class="item">
+          <input type="checkbox" name="check" value="<%= task._id %>" onchange="this.form.submit()">
+          <p><%= task.task %></p>
+        </div>
+      <% }); %>
+    </form>
+  </div>
+</body>
+<%- include('footer') %>
+
