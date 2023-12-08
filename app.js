@@ -65,7 +65,7 @@ app.get("/", async function (req, res) {
       month: "long",
     };
 
-    var formattedDate = date.toLocaleDateString("en-us", options);
+    var formattedDate = datbbbbbbbbbbe.toLocaleDateString("en-us", options);
 
     if (foundresult.length === 0) {
       await tasks.insertMany(defaultItems);
@@ -117,10 +117,10 @@ app.get("/:CustomListName", function (req, res) {
 
 // POST request for adding new tasks
 app.post("/", async function (req, res) {
-  var item = req.body.newtask;
-  var listmoja = req.body.list;
-  var leo = new Date();
-  var LeoHii = leo.getDay();
+  let item = req.body.newtask;
+  let listmoja = req.body.list;
+  let leo = new Date();
+  let LeoHii = leo.getDay();
 
   //used to collect new items which the user enters
   const newTask = new tasks({ task: item });
