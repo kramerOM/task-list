@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const _ = require("lodash");
+const _ = require("lodash"); 
 const favicon = require("serve-favicon");
 const path=require("path")
 
@@ -56,16 +56,16 @@ app.get("/", async function (req, res) {
     const foundresult = await tasks.find({});
     console.log(foundresult);
 
-    var date = new Date();
-    var currentDay = getDayName(date.getDay()); // Use the getDayName function to get the current day name
+    let date = new Date();
+    let currentDay = getDayName(date.getDay()); // Use the getDayName function to get the current day name
 
-    var options = {
+    let options = {
       weekday: "long",
       day: "numeric",
       month: "long",
     };
 
-    var formattedDate = datbbbbbbbbbbe.toLocaleDateString("en-us", options);
+    let formattedDate = date.toLocaleDateString("en-us", options);
 
     if (foundresult.length === 0) {
       await tasks.insertMany(defaultItems);
